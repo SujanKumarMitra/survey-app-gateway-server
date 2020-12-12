@@ -1,0 +1,28 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: "http://localhost:8761/eureka"
+
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: "config-server"
+
+    gateway:
+      routes:
+
+        - id: "data-storage-service"
+          uri: "lb://data-storage-service"
+          predicates:
+            - "Path=/data-storage-service/**"
+          filters:
+            - "RewritePath=/data-storage-service(?<segment>/?.*), ${segment}"
+
+        - id: "form-service"
+          uri: "lb://form-service"
+          predicates:
+            - "Path=/form-service/**"
+          filters:
+            - "RewritePath=/form-service(?<segment>/?.*), ${segment}"
