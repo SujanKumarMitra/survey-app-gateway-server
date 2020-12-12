@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.github.mitrakumarsujan</groupId>
-	<artifactId>gateway-service</artifactId>
+	<artifactId>gateway-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Gateway Service</name>
+	<name>Gateway Server</name>
 	<description>API Gateway Router for Anonymous Surveys</description>
 
 	<properties>

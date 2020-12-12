@@ -1,4 +1,4 @@
-package com.github.mitrakumarsujan.gatewayservice.configuration;
+package com.github.mitrakumarsujan.gatewayserver.configuration;
 
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Configuration;

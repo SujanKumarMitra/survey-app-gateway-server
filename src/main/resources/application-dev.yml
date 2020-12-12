@@ -2,17 +2,22 @@ eureka:
   client:
     service-url:
       defaultZone: "http://localhost:8761/eureka"
-
 spring:
   cloud:
     config:
       discovery:
         enabled: true
         service-id: "config-server"
-
     gateway:
+      default-filters:
+        - "DedupeResponseHeader=Access-Control-Allow-Origin"
+      globalcors:
+        cors-configurations:
+          "[/**]":
+            allowedOrigins: "*"
+            allowedHeaders: "*"
+            allowedMethods: "*"
       routes:
-
         - id: "data-storage-service"
           uri: "lb://data-storage-service"
           predicates:
